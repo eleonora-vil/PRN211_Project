@@ -4,7 +4,7 @@ namespace DataAccess
 {
     public class ShoppingCart
     {
-        FStoreContext context = new FStoreContext();
+        SalesContext context = new SalesContext();
         public List<CartItem> Cart;
         public ShoppingCart()
         {

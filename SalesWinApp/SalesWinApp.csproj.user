@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="CartUI\frmCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CartUI\frmCartUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MemberUI\frmCreateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductUI\frmCreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MemberUI\frmMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MemberUI\frmMemberInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderUI\frmOrderDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderUI\frmOrderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderUI\frmOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductUI\frmProductDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductUI\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductUI\frmProductsUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MemberUI\frmUpdateMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ProductUI\frmUpdateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="OrderUI\frmUserOrderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

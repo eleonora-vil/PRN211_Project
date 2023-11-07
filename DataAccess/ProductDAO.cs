@@ -6,7 +6,7 @@ namespace DataAccess
     {
         private static readonly object _locker = new object();
         private static ProductDAO _instance = null;
-        FStoreContext context = new FStoreContext();
+        SalesContext context = new SalesContext();
         private ProductDAO() { }
         public static ProductDAO Instance
         {
@@ -55,7 +55,7 @@ namespace DataAccess
         public void CreateProduct(Product product)
         {
             Product p = GetProductByID(product.ProductId);
-            var fstorecontext = new FStoreContext();
+            var fstorecontext = new SalesContext();
             if (p == null)
             {
                 fstorecontext.Products.Add(product);
@@ -69,7 +69,7 @@ namespace DataAccess
         public void DeleteProduct(int productID)
         {
             Product p = GetProductByID(productID);
-            var fstorecontext = new FStoreContext();
+            var fstorecontext = new SalesContext();
             if (p != null)
             {
                 fstorecontext.Products.Remove(p);

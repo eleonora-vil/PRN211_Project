@@ -1,16 +1,17 @@
 ﻿using BusinessObject;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace DataAccess
 {
     public class MemberDAO
     {
-        private FStoreContext FStoreContext { get; set; }
+        private SalesContext SalesContext{ get; set; }
         private static MemberDAO instance;
         private static readonly object locked = new object();
         private MemberDAO()
         {
-            FStoreContext = new FStoreContext();
+            SalesContext= new SalesContext();
         }
         public static MemberDAO Instance
         {
@@ -30,14 +31,14 @@ namespace DataAccess
 
         public Member SignIn(string email, string password)
         {
-            return FStoreContext.Members.
+            return SalesContext.Members.
             FirstOrDefault(member => member.Email.Equals(email)
                             && member.Password.Equals(password));
         }
 
         public List<Member> GetMembers()
         {
-            return FStoreContext.Members.ToList();
+            return SalesContext.Members.ToList();
         }
 
         public void AddMember(Member member)
@@ -45,8 +46,8 @@ namespace DataAccess
             Member mem = GetMemberbyId(member.MemberId);
             if (mem == null)
             {
-                FStoreContext.Members.Add(member);
-                FStoreContext.SaveChanges();
+                SalesContext.Members.Add(member);
+                SalesContext.SaveChanges();
             }
             else
             {
@@ -71,18 +72,33 @@ namespace DataAccess
 
         public void RemoveMember(int memberID)
         {
-            Member member = GetMemberbyId(memberID);
-            if (member != null)
+            using (var context = new SalesContext())
             {
-                FStoreContext.Members.Attach(member);
-                FStoreContext.Members.Remove(member);
-                FStoreContext.SaveChanges();
-            }
-            else
-            {
-                throw new Exception("Not Exist");
+                var member = context.Members
+                    .Include(m => m.Orders) // Load related Orders
+                    .FirstOrDefault(m => m.MemberId == memberID);
+
+                if (member != null)
+                {
+                    // Remove related Orders
+                    foreach (var order in member.Orders.ToList())
+                    {
+                        context.Orders.Remove(order);
+                    }
+
+                    // Remove the Member
+                    context.Members.Remove(member);
+
+                    // Save changes
+                    context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Member not found.");
+                }
             }
         }
+
 
         public void UpdateMember(Member member)
         {
@@ -97,7 +113,7 @@ namespace DataAccess
                     oldMember.City = member.City;
                     oldMember.Country = member.Country;
                     oldMember.Password = member.Password;
-                    FStoreContext.SaveChanges();
+                    SalesContext.SaveChanges();
                 }
             }
             else

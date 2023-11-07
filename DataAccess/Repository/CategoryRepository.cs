@@ -10,7 +10,7 @@ namespace DataAccess.Repository
     public class CategoryRepository : ICategoryRepository
     {
         CategoryDAO dao = new CategoryDAO();
-        FStoreContext context = new FStoreContext();
+        SalesContext context = new SalesContext();
 
         public List<Category> GetCategories()
         {

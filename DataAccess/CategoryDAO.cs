@@ -6,7 +6,7 @@ namespace DataAccess
     {
         private static CategoryDAO instance;
         private static readonly object locker = new object();
-        private FStoreContext context = new FStoreContext();
+        private SalesContext context = new SalesContext();
         public static CategoryDAO Instance
         {
             get

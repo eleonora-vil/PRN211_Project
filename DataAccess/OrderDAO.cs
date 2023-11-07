@@ -6,7 +6,7 @@ namespace DataAccess
     {
         private static readonly object _locker = new object();
         private static OrderDAO _instance = null;
-        FStoreContext context = new FStoreContext();
+        SalesContext context = new SalesContext();
 
         private OrderDAO() { }
         public static OrderDAO Instance
