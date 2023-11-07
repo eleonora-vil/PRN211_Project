@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using BusinessObject.Models;
 
 namespace DataAccess
 {
@@ -6,7 +7,7 @@ namespace DataAccess
     {
         private static readonly object _locker = new object();
         private static ProductDAO _instance = null;
-        SalesContext context = new SalesContext();
+        FStoreDBContext context = new FStoreDBContext();
         private ProductDAO() { }
         public static ProductDAO Instance
         {
@@ -39,6 +40,11 @@ namespace DataAccess
             List<Product> products = context.Products.ToList();
             return products;
         }
+        public List<Product> GetShape()
+        {
+            List<Product> products = context.Products.ToList();
+            return products;
+        }
         public Product GetProductByID(int productID)
         {
             return context.Products.FirstOrDefault(p => p.ProductId == productID);
@@ -55,7 +61,7 @@ namespace DataAccess
         public void CreateProduct(Product product)
         {
             Product p = GetProductByID(product.ProductId);
-            var fstorecontext = new SalesContext();
+            var fstorecontext = new FStoreDBContext();
             if (p == null)
             {
                 fstorecontext.Products.Add(product);
@@ -69,7 +75,7 @@ namespace DataAccess
         public void DeleteProduct(int productID)
         {
             Product p = GetProductByID(productID);
-            var fstorecontext = new SalesContext();
+            var fstorecontext = new FStoreDBContext();
             if (p != null)
             {
                 fstorecontext.Products.Remove(p);

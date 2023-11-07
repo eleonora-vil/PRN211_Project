@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BusinessObject.Models;
 namespace DataAccess.Repository
 {
     public interface IProductRepository
     {
         List<Product> GetProducts();
         Product GetProductById(int productID);
+      
+
 
         // Search by id, name, price, unit in stock
         List<Product> SearchProduct(int productID, string? productName, decimal unitPrice, int unitInstock);

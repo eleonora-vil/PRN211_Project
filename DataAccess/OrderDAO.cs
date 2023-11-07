@@ -1,12 +1,12 @@
 ﻿using BusinessObject;
-
+using BusinessObject.Models;
 namespace DataAccess
 {
     public class OrderDAO
     {
         private static readonly object _locker = new object();
         private static OrderDAO _instance = null;
-        SalesContext context = new SalesContext();
+        FStoreDBContext context = new FStoreDBContext();
 
         private OrderDAO() { }
         public static OrderDAO Instance

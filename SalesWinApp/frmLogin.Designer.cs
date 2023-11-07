@@ -28,132 +28,129 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbSignIn = new Label();
-            lbEmail = new Label();
-            lbPassword = new Label();
-            txtEmail = new TextBox();
-            txtPassword = new TextBox();
-            btnSignIn = new Button();
-            btnClose = new Button();
-            errorMessage = new Label();
-            SuspendLayout();
+            this.lbSignIn = new System.Windows.Forms.Label();
+            this.lbEmail = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.btnSignIn = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.errorMessage = new System.Windows.Forms.Label();
+            this.SuspendLayout();
             // 
             // lbSignIn
             // 
-            lbSignIn.Anchor = AnchorStyles.Top;
-            lbSignIn.AutoSize = true;
-            lbSignIn.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbSignIn.Location = new Point(167, 51);
-            lbSignIn.Name = "lbSignIn";
-            lbSignIn.Size = new Size(108, 38);
-            lbSignIn.TabIndex = 0;
-            lbSignIn.Text = "Sign in";
+            this.lbSignIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbSignIn.AutoSize = true;
+            this.lbSignIn.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbSignIn.Location = new System.Drawing.Point(146, 38);
+            this.lbSignIn.Name = "lbSignIn";
+            this.lbSignIn.Size = new System.Drawing.Size(83, 30);
+            this.lbSignIn.TabIndex = 0;
+            this.lbSignIn.Text = "Sign in";
             // 
             // lbEmail
             // 
-            lbEmail.Anchor = AnchorStyles.Top;
-            lbEmail.AutoSize = true;
-            lbEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbEmail.Location = new Point(15, 123);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(59, 28);
-            lbEmail.TabIndex = 1;
-            lbEmail.Text = "Email";
+            this.lbEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbEmail.AutoSize = true;
+            this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbEmail.Location = new System.Drawing.Point(13, 92);
+            this.lbEmail.Name = "lbEmail";
+            this.lbEmail.Size = new System.Drawing.Size(48, 21);
+            this.lbEmail.TabIndex = 1;
+            this.lbEmail.Text = "Email";
             // 
             // lbPassword
             // 
-            lbPassword.Anchor = AnchorStyles.Top;
-            lbPassword.AutoSize = true;
-            lbPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbPassword.Location = new Point(15, 175);
-            lbPassword.Name = "lbPassword";
-            lbPassword.Size = new Size(93, 28);
-            lbPassword.TabIndex = 2;
-            lbPassword.Text = "Password";
+            this.lbPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbPassword.Location = new System.Drawing.Point(13, 131);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(76, 21);
+            this.lbPassword.TabIndex = 2;
+            this.lbPassword.Text = "Password";
             // 
             // txtEmail
             // 
-            txtEmail.Anchor = AnchorStyles.Top;
-            txtEmail.Location = new Point(130, 127);
-            txtEmail.Margin = new Padding(3, 4, 3, 4);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(221, 27);
-            txtEmail.TabIndex = 3;
-            txtEmail.KeyDown += txtEmail_KeyDown;
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtEmail.Location = new System.Drawing.Point(114, 95);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(259, 23);
+            this.txtEmail.TabIndex = 3;
+            this.txtEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEmail_KeyDown);
             // 
             // txtPassword
             // 
-            txtPassword.Anchor = AnchorStyles.Top;
-            txtPassword.Location = new Point(130, 179);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(221, 27);
-            txtPassword.TabIndex = 4;
-            txtPassword.UseSystemPasswordChar = true;
-            txtPassword.KeyDown += txtPassword_KeyDown;
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtPassword.Location = new System.Drawing.Point(114, 134);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(259, 23);
+            this.txtPassword.TabIndex = 4;
+            this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // btnSignIn
             // 
-            btnSignIn.Anchor = AnchorStyles.Top;
-            btnSignIn.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSignIn.Location = new Point(75, 249);
-            btnSignIn.Margin = new Padding(3, 4, 3, 4);
-            btnSignIn.Name = "btnSignIn";
-            btnSignIn.Size = new Size(96, 44);
-            btnSignIn.TabIndex = 5;
-            btnSignIn.Text = "Sign in";
-            btnSignIn.UseVisualStyleBackColor = true;
-            btnSignIn.Click += btnSignIn_Click;
+            this.btnSignIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSignIn.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSignIn.Location = new System.Drawing.Point(94, 174);
+            this.btnSignIn.Name = "btnSignIn";
+            this.btnSignIn.Size = new System.Drawing.Size(84, 33);
+            this.btnSignIn.TabIndex = 5;
+            this.btnSignIn.Text = "Sign in";
+            this.btnSignIn.UseVisualStyleBackColor = true;
+            this.btnSignIn.Click += new System.EventHandler(this.btnSignIn_Click);
             // 
             // btnClose
             // 
-            btnClose.Anchor = AnchorStyles.Top;
-            btnClose.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnClose.Location = new Point(245, 249);
-            btnClose.Margin = new Padding(3, 4, 3, 4);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(96, 44);
-            btnClose.TabIndex = 6;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
+            this.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.Location = new System.Drawing.Point(215, 174);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(84, 33);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // errorMessage
             // 
-            errorMessage.Anchor = AnchorStyles.Top;
-            errorMessage.AutoSize = true;
-            errorMessage.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            errorMessage.ForeColor = Color.Red;
-            errorMessage.Location = new Point(130, 95);
-            errorMessage.Name = "errorMessage";
-            errorMessage.Size = new Size(0, 20);
-            errorMessage.TabIndex = 7;
+            this.errorMessage.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.errorMessage.AutoSize = true;
+            this.errorMessage.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.errorMessage.ForeColor = System.Drawing.Color.Red;
+            this.errorMessage.Location = new System.Drawing.Point(114, 71);
+            this.errorMessage.Name = "errorMessage";
+            this.errorMessage.Size = new System.Drawing.Size(0, 15);
+            this.errorMessage.TabIndex = 7;
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Control;
-            ClientSize = new Size(437, 332);
-            Controls.Add(errorMessage);
-            Controls.Add(btnClose);
-            Controls.Add(btnSignIn);
-            Controls.Add(txtPassword);
-            Controls.Add(txtEmail);
-            Controls.Add(lbPassword);
-            Controls.Add(lbEmail);
-            Controls.Add(lbSignIn);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 1, 2, 1);
-            MaximizeBox = false;
-            MaximumSize = new Size(455, 379);
-            MinimumSize = new Size(455, 379);
-            Name = "frmLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
-            Load += Form1_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(384, 257);
+            this.Controls.Add(this.errorMessage);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnSignIn);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbEmail);
+            this.Controls.Add(this.lbSignIn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(400, 296);
+            this.MinimumSize = new System.Drawing.Size(400, 296);
+            this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Login";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

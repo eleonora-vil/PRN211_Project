@@ -1,10 +1,11 @@
 ﻿using BusinessObject;
+using BusinessObject.Models;
 
 namespace DataAccess
 {
     public class ShoppingCart
     {
-        SalesContext context = new SalesContext();
+        FStoreDBContext context = new FStoreDBContext();
         public List<CartItem> Cart;
         public ShoppingCart()
         {

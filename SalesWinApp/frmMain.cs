@@ -122,7 +122,7 @@
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+  
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -156,7 +156,14 @@
                 childForm.Close();
             }
         }
-       
+        private bool exitConfirm()
+        {
+            DialogResult result = MessageBox.Show("Do you want to logout?", "Logout confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+                return true;
+            else
+                return false;
+        }
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = !exitConfirm();
@@ -192,14 +199,6 @@
             order.Show();
         }
 
-        private bool exitConfirm()
-        {
-            DialogResult result = MessageBox.Show("Do you want to logout?", "Logout confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (result == DialogResult.OK)
-                return true;
-            else
-                return false;
-        }
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (exitConfirm())

@@ -1,4 +1,5 @@
 ﻿using BusinessObject;
+using BusinessObject.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ namespace DataAccess.Repository
     public class CategoryRepository : ICategoryRepository
     {
         CategoryDAO dao = new CategoryDAO();
-        SalesContext context = new SalesContext();
+        FStoreDBContext context = new FStoreDBContext();
 
         public List<Category> GetCategories()
         {

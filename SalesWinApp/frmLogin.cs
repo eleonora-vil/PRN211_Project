@@ -1,4 +1,5 @@
 using BusinessObject;
+using BusinessObject.Models;
 using DataAccess.Repository;
 using Microsoft.Extensions.Configuration;
 

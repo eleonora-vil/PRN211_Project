@@ -1,12 +1,12 @@
 ﻿using BusinessObject;
-
+using BusinessObject.Models;
 namespace DataAccess
 {
     public class CategoryDAO
     {
         private static CategoryDAO instance;
         private static readonly object locker = new object();
-        private SalesContext context = new SalesContext();
+        private FStoreDBContext context = new FStoreDBContext();
         public static CategoryDAO Instance
         {
             get

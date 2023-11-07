@@ -1,17 +1,16 @@
 ﻿using BusinessObject;
-using Microsoft.EntityFrameworkCore;
 using System.Data;
-
+using BusinessObject.Models;
 namespace DataAccess
 {
     public class MemberDAO
     {
-        private SalesContext SalesContext{ get; set; }
+        private FStoreDBContext FStoreDBContext { get; set; }
         private static MemberDAO instance;
         private static readonly object locked = new object();
         private MemberDAO()
         {
-            SalesContext= new SalesContext();
+            FStoreDBContext = new FStoreDBContext();
         }
         public static MemberDAO Instance
         {
@@ -31,14 +30,14 @@ namespace DataAccess
 
         public Member SignIn(string email, string password)
         {
-            return SalesContext.Members.
+            return FStoreDBContext.Members.
             FirstOrDefault(member => member.Email.Equals(email)
                             && member.Password.Equals(password));
         }
 
         public List<Member> GetMembers()
         {
-            return SalesContext.Members.ToList();
+            return FStoreDBContext.Members.ToList();
         }
 
         public void AddMember(Member member)
@@ -46,8 +45,8 @@ namespace DataAccess
             Member mem = GetMemberbyId(member.MemberId);
             if (mem == null)
             {
-                SalesContext.Members.Add(member);
-                SalesContext.SaveChanges();
+                FStoreDBContext.Members.Add(member);
+                FStoreDBContext.SaveChanges();
             }
             else
             {
@@ -72,33 +71,18 @@ namespace DataAccess
 
         public void RemoveMember(int memberID)
         {
-            using (var context = new SalesContext())
+            Member member = GetMemberbyId(memberID);
+            if (member != null)
             {
-                var member = context.Members
-                    .Include(m => m.Orders) // Load related Orders
-                    .FirstOrDefault(m => m.MemberId == memberID);
-
-                if (member != null)
-                {
-                    // Remove related Orders
-                    foreach (var order in member.Orders.ToList())
-                    {
-                        context.Orders.Remove(order);
-                    }
-
-                    // Remove the Member
-                    context.Members.Remove(member);
-
-                    // Save changes
-                    context.SaveChanges();
-                }
-                else
-                {
-                    throw new Exception("Member not found.");
-                }
+                FStoreDBContext.Members.Attach(member);
+                FStoreDBContext.Members.Remove(member);
+                FStoreDBContext.SaveChanges();
+            }
+            else
+            {
+                throw new Exception("Not Exist");
             }
         }
-
 
         public void UpdateMember(Member member)
         {
@@ -113,7 +97,7 @@ namespace DataAccess
                     oldMember.City = member.City;
                     oldMember.Country = member.Country;
                     oldMember.Password = member.Password;
-                    SalesContext.SaveChanges();
+                    FStoreDBContext.SaveChanges();
                 }
             }
             else

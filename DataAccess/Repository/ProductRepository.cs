@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using BusinessObject.Models;
 namespace DataAccess.Repository
 {
     public class ProductRepository : IProductRepository
@@ -13,6 +13,7 @@ namespace DataAccess.Repository
         {
             return ProductDAO.Instance.GetProducts();
         }
+       
         public Product GetProductById(int productID)
         {
             return ProductDAO.Instance.GetProductByID(productID);

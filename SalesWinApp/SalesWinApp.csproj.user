@@ -2,16 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="CartUI\frmCart.cs">
+    <Compile Update="frmCart.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CartUI\frmCartUpdate.cs">
+    <Compile Update="frmCartUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MemberUI\frmCreateMember.cs">
+    <Compile Update="frmCreateMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductUI\frmCreateProduct.cs">
+    <Compile Update="frmCreateProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmCustom.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmLogin.cs">
@@ -20,37 +23,37 @@
     <Compile Update="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MemberUI\frmMember.cs">
+    <Compile Update="frmMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MemberUI\frmMemberInfo.cs">
+    <Compile Update="frmMemberInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderUI\frmOrderDetail.cs">
+    <Compile Update="frmOrderDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderUI\frmOrderDetails.cs">
+    <Compile Update="frmOrderDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderUI\frmOrders.cs">
+    <Compile Update="frmOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductUI\frmProductDetail.cs">
+    <Compile Update="frmProductDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductUI\frmProducts.cs">
+    <Compile Update="frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductUI\frmProductsUser.cs">
+    <Compile Update="frmProductsUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MemberUI\frmUpdateMember.cs">
+    <Compile Update="frmUpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ProductUI\frmUpdateProduct.cs">
+    <Compile Update="frmUpdateProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="OrderUI\frmUserOrderView.cs">
+    <Compile Update="frmUserOrderView.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
